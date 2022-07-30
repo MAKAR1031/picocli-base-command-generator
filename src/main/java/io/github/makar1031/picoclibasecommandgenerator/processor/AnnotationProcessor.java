@@ -1,9 +1,9 @@
-package ru.makar.maven.plugin.basecommandgenerator.processor;
+package io.github.makar1031.picoclibasecommandgenerator.processor;
 
 import com.google.auto.service.AutoService;
 import com.squareup.javapoet.*;
-import ru.makar.maven.plugin.basecommandgenerator.annotation.BaseCommandConfiguration;
-import ru.makar.maven.plugin.basecommandgenerator.annotation.VersionProvider;
+import io.github.makar1031.picoclibasecommandgenerator.annotation.BaseCommandConfiguration;
+import io.github.makar1031.picoclibasecommandgenerator.annotation.VersionProvider;
 
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;

@@ -1,4 +1,4 @@
-package ru.makar.maven.plugin.basecommandgenerator.annotation;
+package io.github.makar1031.picoclibasecommandgenerator.annotation;
 
 public enum PackageDetectionStrategy {
     SPECIFIED,
