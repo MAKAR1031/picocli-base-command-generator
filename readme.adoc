@@ -1,0 +1,68 @@
+= picocli-base-command-generator
+
+Code generator library for automatic creating https://picocli.info/[picocli] base command
+
+== Example
+
+.Application.java
+[source,java]
+----
+@BaseCommandConfiguration(
+    name = "tool",
+    description = "My awesome tool"
+)
+public class Application {
+    public static void main(String[] args) {
+        final BaseCommand command = new BaseCommand(); // generated class
+        final CommandLine commandLine = new CommandLine(command);
+        System.exit(commandLine.execute(args));
+    }
+}
+----
+
+.CommandA.java
+[source, java]
+----
+@Command(
+    name = "a",
+    version = "${COMMAND-NAME} 1.0.0",
+    description = "Command for action 'a'"
+)
+public class CommandA implements Runnable {
+    @Override
+    public void run() {
+        // some command logic
+    }
+}
+----
+
+.CommandB.java
+[source, java]
+----
+@Command(
+    name = "b",
+    version = "${COMMAND-NAME} 1.0.0",
+    description = "Command for action 'b'"
+)
+public class CommandB implements Runnable {
+    @Override
+    public void run() {
+        // some command logic
+    }
+}
+----
+
+== Result
+
+.BaseCommand.java
+[source, java]
+----
+@CommandLine.Command(
+    name = "tool",
+    description = "My awesome tool",
+    mixinStandardHelpOptions = true,
+    subcommands = {CommandA.class,CommandB.class}
+)
+public class BaseCommand {
+}
+----

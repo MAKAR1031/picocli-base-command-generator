@@ -1,1 +1,0 @@
-# picocli-base-command-generator
