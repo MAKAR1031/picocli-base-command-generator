@@ -16,8 +16,8 @@ jobs:
           cache: 'maven'
       - name: Execute maven build
         run: mvn package
-      - name: Upload a Build Artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: build-artifact
+          name: build
           path: target/*.jar
