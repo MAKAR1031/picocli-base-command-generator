@@ -15,7 +15,7 @@ jobs:
           java-version: '17'
           cache: 'maven'
       - name: Execute maven build
-        run: mvn package
+        run: mvn -B package
       - name: Upload artifact
         uses: actions/upload-artifact@v3.1.0
         with:
